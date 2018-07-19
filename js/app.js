@@ -22,12 +22,23 @@ Enemy.prototype.update = function (dt) {
     // all computers.
     this.x += this.speed * dt;
     // Enemies reappear at random speed after they're off the canvas
-    if(this.x > 505) {
+    if (this.x > 505) {
         this.x = -101;
         this.speed = 100 + Math.floor(Math.random() * 200);
     }
-    
+    checkCollisions();
 };
+
+// 1.1.1 Check collisions (https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
+function checkCollisions() {
+    if (player.x < this.x + this.width &&
+        player.x + player.width > this.x &&
+        player.y < this.y + this.height &&
+        player.height + player.y > this.y) {
+        player.x = 202;
+        player.y = 415;
+    }
+}
 
 // 1.2 Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
@@ -41,6 +52,10 @@ var Player = function (x, y) {
     this.y = y;
     // choose the sprite to be used
     this.sprite = 'images/char-horn-girl.png';
+    // Set dimension
+    this.width = 101;
+    this.height = 85;
+
 };
 
 // 2.1 Draw the player on the screen using render method
