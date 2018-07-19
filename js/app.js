@@ -9,17 +9,24 @@ var Enemy = function (x, y, speed) {
     this.y = y;
     // Get the speed of the enemy
     this.speed = speed;
+    // Set dimension
+    this.width = 101;
+    this.height = 85;
 };
 
 // 1.1 Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
-    // You should multiply any movement by the dt parameter (on horizontal axis)
+    // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt;
-
-
+    // Enemies reappear at random speed after they're off the canvas
+    if(this.x > 505) {
+        this.x = -101;
+        this.speed = 100 + Math.floor(Math.random() * 200);
+    }
+    
 };
 
 // 1.2 Draw the enemy on the screen, required method for game
