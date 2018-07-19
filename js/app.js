@@ -11,7 +11,7 @@ var Enemy = function (x, y, speed) {
     this.speed = speed;
 };
 
-// 2. Update the enemy's position, required method for game
+// 1.1 Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
@@ -19,28 +19,39 @@ Enemy.prototype.update = function (dt) {
     // all computers.
 };
 
-// 3. Draw the enemy on the screen, required method for game
+// 1.2 Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// 4. Now write your own player class
-var Player = function (x,y) {
+// 2. Now write your own player class
+var Player = function (x, y) {
     // Get the position of the player on the axes
     this.x = x;
     this.y = y;
     // choose the sprite to be used
     this.sprite = 'images/char-horn-girl.png';
-  };
-  
+};
+
+// 2.1 Draw the player on the screen using render method
+Player.prototype.render = function () {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
 // This class requires an update(), render() and
 // a handleInput() method.
 
 
 // Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+var enemy1 = new Enemy(101, 60, 0);
+var enemy2 = new Enemy(101, 143, 0);
+var enemy3 = new Enemy(101, 226, 0);
 
+// Place all enemy objects in an array called allEnemies
+var allEnemies = [enemy1, enemy2, enemy3];
+
+// Place the player object in a variable called player
+var player = new Player(202, 415);
 
 
 // This listens for key presses and sends the keys to your
@@ -53,5 +64,5 @@ document.addEventListener('keyup', function (e) {
         40: 'down'
     };
 
-    player.handleInput(allowedKeys[e.keyCode]);
+    //player.handleInput(allowedKeys[e.keyCode]);
 });
