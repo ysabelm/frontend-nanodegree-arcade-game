@@ -24,7 +24,7 @@ Enemy.prototype.update = function (dt) {
     // Enemies reappear at random speed after they're off the canvas
     if (this.x > 505) {
         this.x = -101;
-        this.speed = 100 + Math.floor(Math.random() * 200);
+        this.speed = 100 + Math.floor(Math.random() * 250);
     }
     checkCollisions();
 };
@@ -66,18 +66,18 @@ Player.prototype.render = function () {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-
-// Now instantiate your objects.
-var enemy1 = new Enemy(101, 60, 0);
-var enemy2 = new Enemy(101, 143, 0);
-var enemy3 = new Enemy(101, 226, 0);
-
 // Place all enemy objects in an array called allEnemies
-var allEnemies = [enemy1, enemy2, enemy3];
+var allEnemies = [];
+// Set enemies to fixed position on y axis and random position on x axis
+for (var i = 0; i < 3; i++) {
+    this.x = Math.floor(Math.random() * 20);
+    this.y = 60 + 83 * i;
+    this.speed = 100 + Math.floor(Math.random() * 250);
+    allEnemies.push(new Enemy(this.x, this.y, this.speed));
+}
 
 // Place the player object in a variable called player
 var player = new Player(202, 415);
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
