@@ -7,11 +7,8 @@ var Enemy = function (x, y, speed) {
     // Get the position of the enemy on the grid with x and y coordinates
     this.x = x;
     this.y = y;
-    // Sets enemies dimension
-    this.width = width;
-    this.height = height;
     // Get the speed of the enemy
-    this.speed = 100 + Math.floor(Math.random() * 200);
+    this.speed = speed;
 };
 
 // 1.1 Update the enemy's position, required method for game
@@ -22,7 +19,7 @@ Enemy.prototype.update = function (dt) {
     // all computers.
     this.x += this.speed * dt;
 
-    
+
 };
 
 // 1.2 Draw the enemy on the screen, required method for game
