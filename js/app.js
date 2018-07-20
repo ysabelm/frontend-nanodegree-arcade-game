@@ -26,19 +26,19 @@ Enemy.prototype.update = function (dt) {
         this.x = -101;
         this.speed = 100 + Math.floor(Math.random() * 250);
     }
-    checkCollisions();
+    this.checkCollisions();
 };
 
 // 1.1.1 Check collisions (https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
-function checkCollisions() {
+Enemy.prototype.checkCollisions = function () {
     if (player.x < this.x + this.width &&
         player.x + player.width > this.x &&
         player.y < this.y + this.height &&
         player.height + player.y > this.y) {
         player.x = 202;
         player.y = 415;
-    }
-}
+    };
+};
 
 // 1.2 Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
@@ -80,12 +80,12 @@ Player.prototype.handleInput = function (arrowKeyboard) {
             break;
         case 'up':
             if (this.y > 0) {
-                this.y -= 83
+                this.y -= 83;
             }
             break;
         case 'down':
             if (this.y < 415) {
-                this.y += 83
+                this.y += 83;
             }
             break;
     }
@@ -93,21 +93,24 @@ Player.prototype.handleInput = function (arrowKeyboard) {
 
 // 2.3 Set the player to the initial position with an interval when...
 Player.prototype.update = function () {
-    //...she hits an enemy
-    //if (checkCollisions)
-
-
     //..she wins (she reaches the water)
-}
-// 
+    if (this.y < 0) {
+        setTimeout(() => {
+            this.x = player.x;
+            this.y = player.y;
+        }, 600);
+    };
+};
 
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [];
-// Set enemies to fixed position on y axis and random position on x axis
+// Set enemies to fixed position on y axis
+// and random position on x axis
+// and fixed speed
 for (var i = 0; i < 3; i++) {
     this.x = Math.floor(Math.random() * 20);
     this.y = 60 + 83 * i;
-    this.speed = 100 + Math.floor(Math.random() * 250);
+    this.speed = 200;
     allEnemies.push(new Enemy(this.x, this.y, this.speed));
 }
 
