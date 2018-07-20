@@ -1,6 +1,29 @@
-frontend-nanodegree-arcade-game
-===============================
+# Arcade Game Project
+Project of Udacity FEND program - Exploring JS - Objects
+* [Installation](#installation)
+* [Game](#game)
+* [Built with](#builtwith)
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Installation
+Download the repository or clone the repository using git.
+Navigate to the directory to unzip the file or cloned the repository.
+Double-click index.html to open the game in your browser.
+If your familiar with local servers, open a text editor and use localhost http web server command tool.
+See: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Game
+This project of Udacity's front-end web development nanodegree is a version of the frogger arcade-game. The basic requirements for this projects are:
+The player has to reach the water without colliding into the enemies (bugs).
+
+The player can move up, down, left and right using arrow keys without going out of the grid.
+
+The enemies run on the paved block portion of the scene at various (random) speeds each time they reappear.
+
+The player comes back to his/her initial position when the he/she collides an enemy (a bug) or once he/she won (reaches the water).
+This project is about to learn about object-oriented programming. All functions must be either class functions or class prototype functions. It is also a good exercice to handle 'this'.
+
+## Built With
+Languages
+HTML5
+CSS3
+JS
