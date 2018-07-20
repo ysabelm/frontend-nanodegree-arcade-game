@@ -53,8 +53,8 @@ var Player = function (x, y) {
     // Choose the sprite to be used
     this.sprite = 'images/char-horn-girl.png';
     // Set dimension
-    this.width = 101;
-    this.height = 85;
+    this.width = 40;
+    this.height = 30;
 };
 // This class requires an update(), render() and
 // a handleInput() method.
@@ -94,10 +94,10 @@ Player.prototype.handleInput = function (arrowKeyboard) {
 // 2.3 Set the player to the initial position with an interval when...
 Player.prototype.update = function () {
     //..she wins (she reaches the water)
-    if (this.y < 0) {
+    if (this.y < 83) {
         setTimeout(() => {
-            this.x = player.x;
-            this.y = player.y;
+            this.x = 202;
+            this.y = 415;
         }, 600);
     };
 };
