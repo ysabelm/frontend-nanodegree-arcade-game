@@ -9,6 +9,9 @@ var Enemy = function (x, y, speed) {
     this.y = y;
     // Get the speed of the enemy
     this.speed = speed;
+    // Set dimension
+    this.width = 101;
+    this.height = 85;
 };
 
 // 1.1 Update the enemy's position, required method for game
@@ -49,6 +52,9 @@ var Player = function (x, y) {
     this.y = y;
     // Choose the sprite to be used
     this.sprite = 'images/char-horn-girl.png';
+    // Set dimension
+    this.width = 101;
+    this.height = 85;
 };
 // This class requires an update(), render() and
 // a handleInput() method.
@@ -88,6 +94,7 @@ Player.prototype.handleInput = function (arrowKeyboard) {
 // 2.3 Set the player to the initial position with an interval when...
 Player.prototype.update = function () {
     //...she hits an enemy
+    //if (checkCollisions)
 
 
     //..she wins (she reaches the water)
