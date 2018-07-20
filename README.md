@@ -2,7 +2,7 @@
 Project of Udacity FEND program - Exploring JS - Objects
 * [Installation](#installation)
 * [Game](#game)
-* [Built with](#builtwith)
+* [Languages](#languages)
 
 ## Installation
 Download the repository or clone the repository using git.
@@ -22,7 +22,7 @@ The enemies run on the paved block portion of the scene at various (random) spee
 The player comes back to his/her initial position when the he/she collides an enemy (a bug) or once he/she won (reaches the water).
 This project is about to learn about object-oriented programming. All functions must be either class functions or class prototype functions. It is also a good exercice to handle 'this'.
 
-## Built With
+## Languages
 Languages
 HTML5
 CSS3

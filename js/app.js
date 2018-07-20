@@ -56,8 +56,8 @@ var Player = function (x, y) {
     this.width = 40;
     this.height = 30;
 };
-// This class requires an update(), render() and
-// a handleInput() method.
+// This class requires a render(), a handleInput(), 
+// and an update() method
 
 // 2.1 "Draw" the player on the grid using render method
 Player.prototype.render = function () {
@@ -95,6 +95,7 @@ Player.prototype.handleInput = function (arrowKeyboard) {
 Player.prototype.update = function () {
     //..she wins (she reaches the water)
     if (this.y < 83) {
+        // Sets an interval
         setTimeout(() => {
             this.x = 202;
             this.y = 415;
@@ -102,7 +103,7 @@ Player.prototype.update = function () {
     };
 };
 
-// Place all enemy objects in an array called allEnemies
+// 3. Place all enemy objects in an array called allEnemies
 var allEnemies = [];
 // Set enemies to fixed position on y axis
 // and random position on x axis
@@ -114,10 +115,10 @@ for (var i = 0; i < 3; i++) {
     allEnemies.push(new Enemy(this.x, this.y, this.speed));
 }
 
-// Place the player object in a variable called player
+// 4. Place the player object in a variable called player
 var player = new Player(202, 415);
 
-// This listens for key presses and sends the keys to your
+// 5. This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function (e) {
     var allowedKeys = {
