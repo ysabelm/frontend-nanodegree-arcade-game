@@ -6,7 +6,7 @@ Project of Udacity FEND program - Exploring JS - Objects
 
 ## Installation
 Download the repository or clone the repository using git.
-Navigate to the directory to unzip the file or the cloned the repository.
+Navigate to the directory to unzip the file or the cloned repository.
 Double-click index.html to open the game in your browser.
 If your familiar with local servers, open a text editor and use localhost http web server command tool.
 See: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server
